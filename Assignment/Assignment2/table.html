@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>SUSTech Parking Record</title>
+    <link rel="stylesheet" type="text/css" href="table.css"/>
+    <script type="text/javascript" src="table.js"></script>
+</head>
+<body onload="initial()">
+    <table id="mytable" border="1" cellpadding="10" cellspacing="5">
+        <caption id="a"><h2>SUSTech Parking Record</h2></caption>
+        <tr>
+            <th>License Plate Number</th>
+            <th>Entrance Number</th>
+            <th>Date</th>
+            <th>Arrival Time</th>
+            <th>Departure Time</th>
+            <th>Staff Name</th>
+            <th>Staff Number</th>
+            <th>Status</th>
+        </tr>
+        <tbody id="tbody" style="display: none">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="button" value="Delete" onclick="removeRow(this)">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br/>
+    <center><input type="button" value="Add a record" onclick="show()"></center><br>
+    <div id="dd" style="display:none;">
+        <form id="form">
+            License Plate No.:粤B<input type="text" name="licensePlate-­‐no"/><br>
+            Entrance No.: <select id="entrance--no"></select><br>
+            Date:
+            <select id="year" onchange="setMonth()"></select> year
+            <select id="month" onchange="setDay()"></select> month
+            <select id="day"></select> day <br>
+            Arrival Time: <select id="ahour"></select>:
+            <select id="aminute"></select><br>
+            Departure Time:<select id="dhour"></select>:
+            <select id="dminute"></select><br>
+            Staff Name: <input type="text" name="staffName"/><br>
+            Staff Number: <input type="text" name="staffNumber"/><br>
+            Status: In <input type="radio" id="in" value="1" name="status"/> Out <input type="radio" id="out" value="2" name="status"/><br>
+            <input type="button" value="Close" onclick="hidden2()">    <input type="button" value="Add" onclick="onClickAddFlight()"><br>
+
+        </form>
+    </div>
+</body>
+</html>
